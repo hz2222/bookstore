@@ -25,3 +25,10 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+
+h1,h2,h3,p,span {
+ 
+  font-family: 'Montserrat', sans-serif;
+  
+  }
