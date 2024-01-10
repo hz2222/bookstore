@@ -1,15 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-if (typeof window !== 'undefined') {
-  
-  const initialState = {
-    books: JSON.parse(localStorage.getItem('cart')) || [], 
-  };
-}
-
 const cartSlice = createSlice({
   name: 'cart',
-  initialState,
+  initialState: {
+    books: JSON.parse(typeof window !== 'undefined' ? window.localStorage.getItem('cart') : '[]'),
+  },
   reducers: {
     addToFavs: (state, action) => {
       const bookToAdd = action.payload;
